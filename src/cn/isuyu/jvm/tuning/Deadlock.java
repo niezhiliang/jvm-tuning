@@ -16,10 +16,9 @@ public class Deadlock {
         new Thread(()->{
             synchronized (o) {
                 System.out.println("T1:我要开始死锁啦....");
-                try {
-                    o.wait();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                int i = 0;
+                while (true) {
+                    i++;
                 }
             }
         },"T1").start();
